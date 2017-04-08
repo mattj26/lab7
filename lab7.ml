@@ -218,8 +218,8 @@ object
   (* Scale the width and height of a rectangle from the lower-
      left corner. *)
   method scale (k : float) : unit =
-    width <- width *. (k /. 2.);
-    height <- height *. (k /. 2.);
+    width <- width *. sqrt k;
+    height <- height *. sqrt k;
 
 end ;;
 
