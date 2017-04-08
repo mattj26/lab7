@@ -234,12 +234,12 @@ object
   val mutable radius = r
 
   method area : float =
-    pi *. r ** 2.
+    pi *. radius ** 2.
 
   method bounding_box : point * point =
     let xc, yc = center in
-    let xl, yl = xc -. r, yc -. r in
-    let xr, yr = xc +. r, yc +. r in
+    let xl, yl = xc -. radius, yc -. radius in
+    let xr, yr = xc +. radius, yc +. radius in
     (xl, yl), (xr, yr)
 
 
@@ -435,8 +435,10 @@ implement a single method.
 class rect_quad (p : point) (w : float) (h : float) : quad =
   object
     inherit rect p w h
+    val mutable width = w
+    val mutable height = h
     method sides : float * float * float * float =
-      w, h, w, h
+      width, height, width, height
   end ;;
 
 
