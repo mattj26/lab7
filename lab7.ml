@@ -197,29 +197,29 @@ object
   val mutable height = h
 
   method area : float =
-    w *. h
+    width *. height
 
   method bounding_box : point * point =
     let x, y = p in
-    p, (x +. w, y +. h)
+    p, (x +. width, y +. height)
 
   method center : point =
     let x, y = p in
-    x +. (w /. 2.), y +. (h /. 2.)
+    x +. (width /. 2.), y +. (height /. 2.)
 
   (* Destructively update pos to translate the shape by the values
      given in t. *)
   method translate (t : point) : unit =
     let x1, y1 = t in
     let x2, y2 = pos in
-    pos <- x1 +. x2, y1 +. y2
+    pos <- (x1 +. x2, y1 +. y2)
 
 
   (* Scale the width and height of a rectangle from the lower-
      left corner. *)
   method scale (k : float) : unit =
-    width <- width *. k;
-    height <- height *. k
+    width <- (width *. k);
+    height <- (height *. k)
 
 end ;;
 
