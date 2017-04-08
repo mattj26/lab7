@@ -219,7 +219,7 @@ object
      left corner. *)
   method scale (k : float) : unit =
     width <- width *. k;
-    height <- height *. k;
+    height <- height *. k
 
 end ;;
 
