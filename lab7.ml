@@ -200,11 +200,11 @@ object
     width *. height
 
   method bounding_box : point * point =
-    let x, y = p in
-    p, (x +. width, y +. height)
+    let x, y = pos in
+    pos, (x +. width, y +. height)
 
   method center : point =
-    let x, y = p in
+    let x, y = pos in
     x +. (width /. 2.), y +. (height /. 2.)
 
   (* Destructively update pos to translate the shape by the values
